@@ -1,0 +1,19 @@
+{
+  "name": "mind_games",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "module",
+    "url": "git+https://github.com/gremmes/mind_games.git"
+  },
+  "author": "gremmes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gremmes/mind_games/issues"
+  },
+  "homepage": "https://github.com/gremmes/mind_games#readme"
+}
