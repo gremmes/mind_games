@@ -39,10 +39,10 @@ const numberProgressionGame = async () => {
         ])
         .then(answers => {
             if (answers.userAnswer === missedElem.toString()) {
-                console.info('Answer', 'Right!');
+                console.info('The answer is right!');
                 rightAnswers += 1;
             } else {
-                console.info('Answer:', 'Wrong! Try again!');
+                console.info('The answer is wrong!');
             };
         });
     };
