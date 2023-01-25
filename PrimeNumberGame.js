@@ -1,0 +1,49 @@
+import inquirer from "inquirer";
+
+const isPrime = (number) => {
+    if (number < 2) return false;
+
+    let divider = 2;
+
+    while (divider <= number / 2) {
+        if (number % divider === 0) return false;
+        else divider += 1;
+    }
+
+    return true;
+};
+
+const expectedAnswer = (result) => {
+    if (result === true) return 'yes';
+    else return 'no';
+}
+
+const primeNumberGame = async() => {
+    let rightAnswers = 0;
+    let wrongAnswers = 0;
+
+    while (rightAnswers < 3 && wrongAnswers < 1) {
+        const randomNumber = Math.floor(Math.random() * (25 - 0));
+        const result = isPrime(randomNumber);
+        const answer = expectedAnswer(result);
+
+        await inquirer
+        .prompt([
+            {
+                name: 'userAnswer',
+                message: `Is the numer ${randomNumber} prime? yes/no?`
+            }
+        ])
+        .then(answers => {
+            if (answers.userAnswer === answer) {
+                console.info('The answer is right!');
+                rightAnswers += 1;
+            } else {
+                console.info('The answer is wrong!');
+                wrongAnswers += 1;
+            }
+        })
+    }
+};
+
+primeNumberGame();
