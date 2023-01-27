@@ -36,5 +36,26 @@ const evenNumberGame = async() => {
             };
         });
     }
+
+    if (wrongAnswers === 1) {
+        await inquirer
+        .prompt([
+            {
+                name: 'userAnswer',
+                message: 'Do you want to repeat the game? y/n?',
+            }
+        ])
+        .then(answers => {
+            if (answers.userAnswer === 'y') {
+                evenNumberGame();
+            } else {
+                console.info('Ok! Next time! Bye!');
+            }
+        })
+    }
+
+    if (rightAnswers === 3) {
+        console.log('Game over! You win!');
+    }
 };
 evenNumberGame();
