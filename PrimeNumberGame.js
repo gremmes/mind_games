@@ -18,7 +18,7 @@ const expectedAnswer = (result) => {
     else return 'no';
 }
 
-const primeNumberGame = async() => {
+export const primeNumberGame = async() => {
     let rightAnswers = 0;
     let wrongAnswers = 0;
 
@@ -67,4 +67,4 @@ const primeNumberGame = async() => {
     }
 };
 
-primeNumberGame();
+//primeNumberGame();

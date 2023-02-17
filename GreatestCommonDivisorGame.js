@@ -20,7 +20,7 @@ const getArrayIntersection = (arr1, arr2) => {
     return result;
 };
 
-const greatestCommonDivisorGame = async() => {
+export const greatestCommonDivisorGame = async() => {
     let rightAnswers = 0;
     let wrongAnswers = 0;
 
@@ -74,4 +74,4 @@ const greatestCommonDivisorGame = async() => {
     }
 };
 
-greatestCommonDivisorGame();
+//greatestCommonDivisorGame();

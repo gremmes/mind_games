@@ -32,11 +32,12 @@ const operationResult = (a, b) => {
     return result;
 }
 
-const calculatorGame = async () => {
+export const calculatorGame = async() => {
     console.log('What is the right answer? (Use only natural numbers)');
     let rightAnswers = 0;
+    let wrongAnswers = 0;
 
-    while (rightAnswers < 3) {
+    while (rightAnswers < 3 && wrongAnswers < 1) {
         const firstOperand = Math.floor(Math.random() * (100 - 0));
         const secondOperand = Math.floor(Math.random() * (firstOperand - 0));
         const result = operationResult(firstOperand, secondOperand);
@@ -54,6 +55,7 @@ const calculatorGame = async () => {
                 rightAnswers += 1;
             } else {
                 console.info('The answer is wrong!');
+                wrongAnswers += 1;
             };
         });
     };
@@ -80,4 +82,4 @@ const calculatorGame = async () => {
     }
 };
 
-calculatorGame();
+// calculatorGame();

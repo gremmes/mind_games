@@ -23,11 +23,12 @@ const createProgression = () => {
     return progressionArr;
 }
 
-const numberProgressionGame = async () => {
+export const numberProgressionGame = async () => {
     console.log('What is the right answer? What number is missing?');
     let rightAnswers = 0;
+    let wrongAnswers = 0;
     
-    while (rightAnswers < 3) {
+    while (rightAnswers < 3 && wrongAnswers < 1) {
         const progressionStr = createProgression().join(' ');
 
         await inquirer
@@ -43,6 +44,7 @@ const numberProgressionGame = async () => {
                 rightAnswers += 1;
             } else {
                 console.info('The answer is wrong!');
+                wrongAnswers += 1;
             };
         });
     };
@@ -69,4 +71,4 @@ const numberProgressionGame = async () => {
     }
 };
 
-numberProgressionGame();
+//numberProgressionGame();

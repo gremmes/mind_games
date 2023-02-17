@@ -10,7 +10,7 @@ const expectedAnswer = (result) => {
     else return 'no';
 }
 
-const evenNumberGame = async() => {
+export const evenNumberGame = async() => {
     let rightAnswers = 0;
     let wrongAnswers = 0;
 
@@ -58,4 +58,4 @@ const evenNumberGame = async() => {
         console.log('Game over! You win!');
     }
 };
-evenNumberGame();
+//evenNumberGame();
