@@ -13,13 +13,26 @@ const mainMenuGame = async() => {
         'Prime number Game',
         'Greatest common divisor Game'
     ];
+    let userName = '';
 
+    await inquirer
+    .prompt([
+        {
+            name: 'userName',
+            message: 'Welcome to the Brain Game! May I have your name?'
+        }
+    ])
+    .then(ans => {
+        userName = ans.userName;
+        console.log(userName);
+    })
+    
     await inquirer
     .prompt([
         {
             type: 'rawlist',
             name: 'game',
-            message: 'What game would you like to play?',
+            message: `What game would you like to play, ${userName}?`,
             choices: [
                 'Calculator Game',
                 'Number progression Game',
