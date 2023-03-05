@@ -4,7 +4,7 @@ let symbol;
 
 // choosing the symbol of the operation and do it
 const operationResult = (a, b) => {
-    const numberSymbol = Math.floor(Math.random() * (4 - 0));
+    const numberSymbol = Math.floor(Math.random() * 4);
     let result;
 
     switch (numberSymbol) {
@@ -33,13 +33,15 @@ const operationResult = (a, b) => {
 }
 
 export const calculatorGame = async() => {
-    console.log('What is the right answer? (Use only natural numbers)');
+    console.log('What is the right answer?');
     let rightAnswers = 0;
     let wrongAnswers = 0;
 
     while (rightAnswers < 3 && wrongAnswers < 1) {
-        const firstOperand = Math.floor(Math.random() * (100 - 0));
-        const secondOperand = Math.floor(Math.random() * (firstOperand - 0));
+        // the randomMultiplier is used to get at least one common integer divisor in case of a division operation
+        const randomMultiplier = Math.floor(Math.random() * 4) + 2;
+        const secondOperand = Math.floor(Math.random() * 25) + 1;
+        const firstOperand = secondOperand * randomMultiplier;
         const result = operationResult(firstOperand, secondOperand);
 
         await inquirer
@@ -81,5 +83,3 @@ export const calculatorGame = async() => {
         console.log('Game over! You win!');
     }
 };
-
-// calculatorGame();
